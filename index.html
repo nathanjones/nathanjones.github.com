@@ -1,60 +1,213 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Nathan Jones' GitHub Repo'</title>
+<html><head>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-	  <a href="https://github.com/nathanjones"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-    <div class="wrapper">
-      <header>
-        <h1>Nathan Jones' GitHub Page</h1>
-        <div class="textwidget">
-        <div class="about-pic"></div>
-        <p>Hey, I'm Nathan Jones and I am a Developer living in Austin, TX. I can't get enough of the latest dev tools and tricks.</p>
-        <p>If you want more info about me, please email me at <a href="mailto:me@nathanrjones.com">me@nathanrjones.com</a>.</p>
-        <p>If you need help with an upcoming project, I am available for hire or would be happy to help you find someone who may be a better fit.</p>
-		</div>
+  <title>Nathan Jones | Android &amp; Front-End Engineer</title>
 
-        <p class="view"><a href="https://github.com/nathanjones">View My GitHub Profile</a></p>
-        
-        <h3>Get In Touch</h3>
-        <ul>
-        	<li><a target="_blank" href="mailto:me@nathanrjones.com">Email</a></li>
-        	<li><a target="_blank" href="http://natejon.es/to/linkedin">LinkedIn</a></li>
-        	<li><a target="_blank" href="http://natejon.es/+">Google+</a></li>
-        </ul>
-        <br>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-      </header>
-      <section>
-        <h3>Welcome to My GitHub Page</h3>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400,700">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.css">
 
-        <p>Obviously, not much here at the moment. I'll update it soon... ish. This is my new GitHub account, my old one can be found</p>
-        <p>For now, check out my <a href="https://github.com/nathanjones">GitHub Profile</a> or view my <a href="http://nathanrjones.com">Portfolio/Blog</a>.</p>
+  <style>
 
-      </section>
-      <div class="clear"></div>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-30914383-3");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+	/*
+	 * PALETTE
+	 *
+	 * Blue - #0288D1
+	 * Primary Text - #212121
+	 * Secondary Text - #727272
+	 *
+	 */
 
-  </body>
+	body { background: #e9eaed; font-family: 'Roboto', 'Open Sans', sans-serif !important; }
+	#top { background: #0288D1; background-size: cover; color: #fff;}
+	#titlebar { width: 100%; max-width: 760px; margin: 0 auto; padding: 2rem 2.5rem 6rem; }
+	#titlebar h1 { font-size: 2.5rem; line-height: 3.5rem; font-weight: 300; margin: 0; }
+	#titlebar h2 { font-size: 1.25rem; line-height: 2rem; font-weight: 400; margin: 0; font-family: 'Inconsolata', 'Open Sans', sans-serif; }
+	#sections { width: 100%; max-width: 760px; margin: -4rem auto 0; padding: 0 1rem; }
+	#footer { margin: 1.5rem 0 2rem; text-align: center; }
+	#footer .top { color: #727272; font-weight: bold; }
+	#footer .top:hover { color: #0288D1; }
+	.card h3, .card h4, .card p { padding: 0 1.5rem; }
+	.card h3 { margin: 1.5rem 0 0.5rem; font-size: 1.5rem; line-height: 2rem; color: #212121; }
+	.card h3 span { padding-left: 0.5rem; font-size: 1rem; color: #AAA; float: right; vertical-align: text-bottom; font-weight: 300; }
+	.card h4 { margin: 0.5rem 0 1rem; line-height: 1.5rem; font-size: 1.25rem;  color: #0288D1; font-family: 'Inconsolata', 'Open Sans', sans-serif; }
+	.card p { margin: 1rem 0 1.5rem; font-size: 1rem; line-height: 1.5rem; color: #212121; }
+	.card .skills { color: #AAA; font-size: 14px; font-weight: 300; }
+	.copyright { margin: 1rem 0; color: #CCC; font-weight: 300; }
+	.btn-flat { font-weight: bold; }
+	.btn-floating { overflow: visible; opacity 0.25s ease-in-out; }
+	.btn-floating i { font-size: 1.25rem; }
+	.btn-floating.show { opacity: 1 !important; }
+	.btn-floating.btn-large i { font-size: 1.75rem; }
+	.btn-floating:before { content: ''; opacity: 0; position: absolute; top: 0.5rem; right: 3.5rem; padding: 0.25rem 0.5rem; line-height: 1rem; background: rgba(70,70,70,.9); border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,.15); font-size: 0.8rem; color: #ececec; transition: opacity 0.25s ease-in-out; }
+	.btn-floating:hover:before { opacity: 1; }
+	.btn-floating.contact-me:before { content: 'Connect'; text-transform: none; right: 5rem; top: 1.25rem; }
+	.btn-floating.email { background-color: #ffc107; }
+	.btn-floating.email:before { content: 'paging@drjon.es'; }
+	.btn-floating.linkedin { background-color: #287bbc; }
+	.btn-floating.linkedin:before { content: 'LinkedIn'; }
+	.btn-floating.twitter { background-color: #02a8f3; }
+	.btn-floating.twitter:before { content: 'Twitter'; }
+	.btn-floating.github { background-color: #666; }
+	.btn-floating.github:before { content: 'Github'; }
+	.fixed-action-btn ul { bottom: 48px; }
+
+	@media only screen and (max-width: 992px) {
+		li .btn-floating:before { opacity: 1; }
+	}
+	</style>
+</head><body>
+
+<header id="top">
+
+  <div id="titlebar">
+    <h1>nathan jones</h1>
+    <h2>{ developer : android &amp; web }</h2>
+  </div>
+
+</header>
+
+<div id="sections">
+
+  <section id="hop-market" class="card">
+
+    <h3>Hop Market<span>Apr '15 - Present</span></h3>
+    <h4>Lead Android Engineer</h4>
+
+    <p>Responsible for all things related to the Android app for Hop Market, including building and maintaining features, advising on project scope and implementation estimates, managing build processes and continuous integration, and providing end user support.</p>
+    <p class="skills">Android, Java, Gradle, RxJava, Dagger 2 (DI), Retrofit, Mosby (MVP), TeamCity (CI), Git</p>
+
+  </section>
+
+
+  <section id="opdots-2" class="card">
+
+    <h3>OpDots, Inc <span>Aug '14 - Apr '15</span></h3>
+    <h4>Sr. Software Engineer</h4>
+
+    <p>Responsible for architecting and implementing all of the user interface aspects of dynamic, visualization platform built upon the Salesforce platform.</p>
+    <p class="skills">JavaScript, jQuery, KnockoutJS, Gulp, SCSS, Unix, HTML5/CSS3, Git, Java/Apex, Visualforce</p>
+
+  </section>
+
+  <section id="clyp" class="card">
+
+    <h3>Clyp<span class="sidenote">Nov '13 - Jul '14</span></h3>
+    <h4>Lead Android Developer</h4>
+
+    <p>Clyp was a side-project build by three fellow uShip employees and I to give people a better experience sharing audio content. Largely through integrations with other social networks, and native iOS and Android apps, we were able to build the audience to over two million pageviews a month.</p>
+    <p>Designed and built an Android app that connected to the public Clyp API, which allowed users to discover new and interesting content on the platform.</p><p>
+  </p><p>Built one of the first applications to provide beta support for Google's Chromecast device.</p>
+    <p>Co-developed the redesign of the Audiour.com website, which included implementing drag and drop, multi-file upload.</p>
+
+    <p class="skills">KnockoutJS, ASP.NET MVC, Jasmine, jQuery, SCSS, REST, HTML5/CSS3, TeamCity, Mercurial (Hg)</p>
+
+  </section>
+
+  <section id="uship" class="card">
+
+    <h3>uShip.com <span class="sidenote">Dec '12 - Aug '14</span></h3>
+    <h4>Software Developer III</h4>
+
+    <p>Primary responsibility is to help drive the effort in redesigning and implementing the front end architecture of uShip.com.</p>
+    <p>Introduced BDD style JavaScript unit testing, tightly integrated into the Continuous Integration process, in order to promote a scalable, maintainable codebase.</p>
+    <p class="skills">KnockoutJS, ASP.NET MVC, Jasmine, jQuery, SCSS, REST, HTML5/CSS3, TeamCity, Mercurial (Hg)</p>
+
+  </section>
+
+  <section id="ventas" class="card">
+
+    <h3>Ventas Consulting <span class="sidenote">Jan '12 - Nov '12</span></h3>
+    <h4>Sr. Business Analyst &amp; Developer</h4>
+
+    <p>Responsible for gathering business requirements, and implementing or optimizing software solutions centered around the Salesforce.com &amp; Force.com platforms to SMBs and non-profit organizations.</p>
+    <p>Architecting and deploying Salesforce.com implementations with particular experience in Reporting Optimization, Marketing Automation, Lead Generation, Lead Management, Data Migration, Cloud Service Integration, and End-User Support.</p>
+    <p>Hand built custom WordPress plugins and themes using PHP, JavaScript and jQuery, using the latest WordPress functionality</p>
+    <p class="skills">Salesforce.com, Business Analysis, Java/Apex, JavaScript, PHP, WordPress, Magento.</p>
+
+  </section>
+
+  <section id="opdots" class="card">
+
+    <h3>OpDots, Inc <span class="sidenote">Jun '11 - Feb '12</span></h3>
+    <h4>Software Developer II</h4>
+
+    <p>Responsible for the test-driven web application (my.opdots.com) UI development, and marketing website (opdots.com).</p>
+    <p>Developed primarily using JavaScript, both server and client side. For the client side, used AgilityJS library to bring MVC architecture to JavaScript. For the server side, used Node.JS as an event driven framework. Used Jasmine for testing driven development.</p>
+    <p>Implemented sophisticated, Javascript-based website user and visitor analytics using third-party and custom tools.</p>
+    <p class="skills">Javascript, jQuery, NodeJS, Jasmine, HTML5/CSS3, Agility MVC, Python, PHP, Git, SVN</p>
+
+  </section>
+
+  <section id="nflp" class="card">
+
+    <h3>Network Funding, LP <span class="sidenote">Aug '09 - Aug '11</span></h3>
+    <h4>IT Support Administrator</h4>
+
+    <p>Responsible for providing remote and on-site system support to 150 local employees and over 500 nationwide employees.</p>
+
+  </section>
+
+  <section id="operational-transparency" class="card">
+
+    <h3>Operational Transparency <span class="sidenote">Jun '09 - Aug '09</span></h3>
+    <h4>iOS Developer</h4>
+
+    <p>Responsible for designing and building iPhone applications using the latest iPhone software technologies and Apple's tools, including Xcode and Interface Builder.</p>
+
+  </section>
+
+  <section id="mobi" class="card">
+
+    <h3>mobi <span class="sidenote">Jun '08 - Aug '08</span></h3>
+    <h4>Java Development Intern</h4>
+
+    <p>Responsible for designing and implementing Q.A. testing procedures for web-based Java software as well as developing solutions to any problems discovered.</p>
+
+  </section>
+
+</div>
+
+<div class="fixed-action-btn" style="right: 2rem; bottom: 2rem;">
+
+  <a class="btn-floating btn-large contact-me red">
+    <i class="large mdi-social-person"></i>
+  </a>
+
+  <ul>
+    <li>
+      <a href="mailto:paging@drjon.es" class="btn-floating email">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="http://linkedin.com/in/nathanrjones" target="_blank" class="btn-floating linkedin">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a href="http://twitter.com/natejonesy" target="_blank" class="btn-floating twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/nathanjones" target="_blank" class="btn-floating github">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+<footer id="footer">
+  <a href="#" class="waves-effect btn-flat ">TO THE TOP</a>
+  <div class="copyright">&copy; 2015 Nathan Jones</div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.js"></script>
+
+</body>
 </html>
